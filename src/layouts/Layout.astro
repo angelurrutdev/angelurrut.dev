@@ -1,0 +1,73 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Angel Urrutia, Software Developer, Web Developer, Front-end Developer, React, Next.js, Angular, TypeScript, JavaScript, Vite, TailwindCSS, UX/UI"
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://angelurrutdev.vercel.app/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:description" content={description} />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="large_image" />
+    <meta property="twitter:url" content="https://angelurutdev.vercel.app/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+  </head>
+
+  <body
+    class="flex flex-col gap-5 items-center px-4 space-y-4 w-full font-sans fill-mode-backwards bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-200 scroll-smooth"
+  >
+    <Header />
+    <slot />
+    <Footer />
+    <style is:global>
+      @font-face {
+        font-family: "Geist";
+        src: url("/fonts/Geist.woff2") format("woff2");
+        font-weight: 100 900;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "GeistMono";
+        src: url("/fonts/GeistMonoVF.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Gambarino";
+        src: url("/fonts/Gambarino-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-display: swap;
+      }
+
+      :root {
+        color-scheme: light dark;
+      }
+    </style>
+  </body>
+</html>

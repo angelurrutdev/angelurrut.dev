@@ -1,0 +1,73 @@
+---
+import { Socials } from "@constants";
+import SocialPill from "./SocialPill.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import GitHub from "./icons/GitHub.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Mail from "./icons/Mail.astro";
+import Cv from "./icons/Cv.astro";
+import { getI18N } from "@/i18n";
+import LanguageSelector from "./LanguageSelector.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const CV_ENGLISH = "/CV_Angel_Urrutia(English).pdf";
+const CV_SPANISH = "/CV_Angel_Urrutia(Spanish).pdf";
+// Obtener el CV mediante la URL
+const currentURL = new URL(Astro.request.url);
+const mostrarEN = currentURL.pathname.startsWith("/en/");
+---
+
+<nav
+  class="container flex sticky top-0 z-10 justify-between items-center py-4 mb-1 w-full max-w-2xl backdrop-blur-md md:max-w-5xl dark:bg-neutral-900/80"
+>
+  <a
+    href="/"
+    class="flex items-center space-x-2 font-medium tracking-tight opacity-80 transition-opacity duration-150 text-md hover:opacity-100"
+  >
+    <span class="ml-2">angelurrutdev</span>
+  </a>
+
+  <div class="flex items-center space-x-1">
+    <SocialPill
+      class="flex justify-center items-center p-1 text-sm font-medium whitespace-nowrap rounded-md opacity-80 transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 hover:opacity-100"
+      href={mostrarEN ? CV_ENGLISH : CV_SPANISH}
+      target="_blank"
+    >
+      <Cv class="size-6" />
+      <div class="flex items-center">
+        <span class="hidden ml-1 lg:flex"> {i18n.HEADER_DOWNLOAD} &nbsp; </span>
+        <span>CV</span>
+      </div>
+    </SocialPill>
+
+    <SocialPill
+      href={Socials.github_url}
+      title={Socials.github_title}
+      target="_blank"
+    >
+      <GitHub class="mx-2 size-6" />
+    </SocialPill>
+
+    <SocialPill
+      href={Socials.linkedin_url}
+      title={Socials.linkedin_title}
+      target="_blank"
+
+    >
+      <LinkedIn class="mx-1 size-5" />
+    </SocialPill>
+
+    <SocialPill
+      href=`mailto:${Socials.email_url}`
+      title={Socials.email_title}
+      target="_blank"
+      className="md:inline-flex hidden"
+    >
+      <Mail class="mx-1 size-5" />
+    </SocialPill>
+
+    <LanguageSelector />
+    <ThemeToggle />
+  </div>
+</nav>

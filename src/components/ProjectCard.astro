@@ -1,0 +1,169 @@
+---
+import Link from "../components/icons/Link.astro";
+import ShinyBadge from "../components/ShinyBadge.astro";
+import AstroIcon from "../components/icons/AstroIcon.astro";
+import TailwindIcon from "../components/icons/TailwindIcon.astro";
+import ReactIcon from "../components/icons/ReactIcon.astro";
+import NextJSIcon from "../components/icons/NextJSIcon.astro";
+import TypeScriptIcon from "../components/icons/TypeScriptIcon.astro";
+import JavaScriptIcon from "../components/icons/JavaScriptIcon.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import Subtitle from "../components/Subtitle.astro";
+import Test from "./Test.svelte";
+import { Image } from "astro:assets";
+
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const TAGS = {
+  ASTRO: {
+    name: "Astro 5",
+    class: "",
+    icon: AstroIcon,
+  },
+  TAILWIND: {
+    name: "TailwindCSS",
+    class: "",
+    icon: TailwindIcon,
+  },
+  NEXTJS: {
+    name: "Next.js",
+    class: "",
+    icon: NextJSIcon,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "",
+    icon: TypeScriptIcon,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "",
+    icon: JavaScriptIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "",
+    icon: ReactIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    icon: "/projects/icons/vecambio.svg",
+    title: "VeCambio",
+    description: `💸 ${i18n.PROJECT_DESCRIPTION_ONE}`,
+    url: "https://vecambio.vercel.app",
+    github_url: "https://github.com/angelurrutdev/vecambio",
+    project_image: "/projects/vecambio-project.webp",
+    tags: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+
+    latest: true,
+  },
+  {
+    icon: "/projects/icons/gitguide.webp",
+    title: "GitGuide",
+    description: `✨ ${i18n.PROJECT_DESCRIPTION_TWO}`,
+    url: "https://gitguide.vercel.app",
+    github_url: "https://github.com/angelurrutdev/gitguide",
+    project_image: "/projects/gitguide-project.webp",
+    tags: [TAGS.ASTRO],
+    updated: true,
+  },
+];
+
+function getBadgeText(project: Project) {
+  if (project.latest) return "latest";
+  if (project.updated) return "updated";
+  return "";
+}
+
+interface Project {
+  latest?: boolean;
+  updated?: boolean;
+}
+---
+
+<Subtitle>{i18n.PROJECTS_PRE_TITLE}</Subtitle>
+
+<section
+  class="grid flex-col grid-cols-1 gap-3 max-w-2xl duration-500 delay-100 fill-mode-backwards md:max-w-5xl md:grid-cols-2"
+>
+  {
+    PROJECTS.map(
+      ({
+        icon,
+        title,
+        description,
+        github_url,
+        url,
+        tags,
+        latest,
+        updated,
+        project_image,
+      }) => (
+        <Test client:load>
+          <div class="flex flex-col space-y-3">
+            <div class="flex justify-between items-center w-full">
+              <div class="flex items-center space-x-[10px]">
+                <img src={icon} alt={title} class="rounded-md size-6" />
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex items-center gap-[6px] font-medium decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:underline"
+                >
+                  <span>{title}</span>
+                  <Link />
+                </a>
+              </div>
+              <div class="flex gap-2 items-center">
+                <ShinyBadge>{getBadgeText({ latest, updated })}</ShinyBadge>
+                {github_url && (
+                  <a
+                    href={github_url}
+                    title={`View ${title} repository on GitHub`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="opacity-75 transition-opacity duration-100 hover:opacity-100"
+                  >
+                    <GitHub class="inline-flex justify-center items-center space-x-3 text-sm font-medium whitespace-nowrap rounded-md opacity-80 transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 hover:opacity-100 size-5" />
+                  </a>
+                )}
+              </div>
+            </div>
+            <p class="text-sm font-semibold truncate dark:text-neutral-400">
+              {description}
+            </p>
+
+            {project_image && (
+              <a href={url}>
+                <Image
+                  src={project_image}
+                  alt={`Imagen de ${title}`}
+                  width={480}
+                  height={270}
+                  loading="lazy"
+                  class="object-cover rounded-md transition duration-500 hover:scale-90"
+                />
+              </a>
+            )}
+            <div class="flex overflow-x-auto items-center py-1 font-mono md:space-x-2">
+              {tags.map((tag) => (
+                <div class="flex items-center space-x-1">
+                  <span
+                    class={`inline-flex items-center px-2 py-1 space-x-2 font-mono text-xs font-medium rounded-md border cursor-default border-neutral-300 bg-neutral-300 text-gray-800 dark:text-white dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300"${tag.class}`}
+                  >
+                    <tag.icon class="mx-1 size-4" />
+                    {tag.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Test>
+      )
+    )
+  }
+</section>

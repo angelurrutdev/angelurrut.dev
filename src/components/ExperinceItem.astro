@@ -1,0 +1,62 @@
+---
+/*
+import Link from "./icons/Link.astro";
+import Subtitle from "./Subtitle.astro";
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+
+// EXAMPE FOR USE USING I18N EXPERIENCE_{PILL}_{NUMBEROF EXPERIENCE}
+const EXPERIENCE = [
+  {
+    title: `${i18n.EXPERINCE_TITLE_ONE}`,
+    time: `${i18n.EXPERINCE_TIME_ONE}`,
+    description: `${i18n.EXPERINCE_DESCRIPTION_ONE}`,
+    company: `${i18n.EXPERINCE_COMPANY_ONE}`,
+    company_url: `${i18n.EXPERINCE_COMPANYURL_ONE}`
+  },
+];
+// ---
+<section
+  class="flex flex-col space-y-4 duration-500 delay-200 animate-in fade-in slide-in-from-bottom-4 fill-mode-backwards"
+>
+  <Subtitle> {i18n.EXPERIENCE_PRE_TITLE} </Subtitle>
+
+  {
+    EXPERIENCE.map(({ title, description, time, company, company_url }) => (
+      <ol class="">
+        <li class="">
+          <div class="relative mx-12 pb-1 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4">
+            <div class="relative pb-12 md:col-span-2">
+              <div class="sticky top-0">
+                <div class="-left-[40px] absolute mt-2 h-3 w-3 rounded-full border border-neutral-400 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-800" />
+                <time class="mb-2 font-mono text-xs font-normal leading-none text-neutral-600 dark:text-neutral-400">
+                  {time}
+                </time>
+                <h3 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+                  {title}
+                </h3>
+                <a
+                  href={company_url}
+                  target="_blank"
+                  rel="noopener"
+                  class="flex items-center w-max text-sm transition-colors duration-150 group text-pretty text-neutral-600 hover:text-black dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-white"
+                >
+                  <span>{company}</span>
+                  <Link class="lucide-icon lucide lucide-arrow-up-right ml-1 duration-150 group-hover:translate-x-[1.5px]" />
+                </a>
+              </div>
+            </div>
+            <div class="flex relative flex-col gap-2 pb-4 max-w-xl text-gray-600 dark:text-gray-300 md:col-span-3">
+              {description}
+            </div>
+          </div>
+        </li>
+      </ol>
+    ))
+  }
+</section>
+*/
+---

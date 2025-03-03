@@ -1,0 +1,51 @@
+---
+import { Socials } from "@constants";
+import SocialPill from "./SocialPill.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+
+import { getI18N } from "@/i18n";
+import AstroIcon from "./icons/AstroIcon.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<footer
+  class="group w-full text-xs text-neutral-600 animate-in fade-in-25 dark:text-neutral-400 backdrop-blur-md bottom-0 mt-4 max-w-2xl md:max-w-5xl font-mono"
+>
+  <div class="mx-4 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-heart text-red-500 group-hover:transform group-hover:animate-pulse"
+        ><path
+          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+        ></path></svg
+      ><a
+        href="https://astro.build/blog/astro-5-beta/"
+        rel="noreferrer"
+        target="_blank"
+        class="flex items-center space-x-1 text-sm"
+        ><p>{i18n.MADE_BY}</p>
+    <AstroIcon/>
+      </a>
+    </div>
+    <div class="flex items-center space-x-2">
+      <p class="">{i18n.LAST_UPDATE}</p>
+      <SocialPill
+        href={Socials.linkedin_url}
+        title={Socials.linkedin_title}
+        target="_blank"
+      >
+        <LinkedIn class="size-5 mx-1" />
+      </SocialPill>
+    </div>
+  </div>
+</footer>

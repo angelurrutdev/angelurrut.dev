@@ -1,0 +1,27 @@
+---
+import { getI18N } from "@/i18n";
+import { Socials } from "@constants";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<div class="max-w-2xl md:max-w-5xl">
+  <div class="flex justify-center items-center mb-1">
+    <a
+      href={Socials.linkedin_url}
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+    </a>
+  </div>
+  <h1
+    class="mb-2 text-4xl font-bold tracking-tight text-center text-gray-800 sm:text-5xl dark:text-white"
+  >
+    {i18n.HERO_TITLE}
+  </h1>
+  <p
+    set:html={i18n.HERO_DESCRIPTION}
+    class="justify-center items-center mx-auto max-w-xl text-center text-pretty"
+  />
+</div>

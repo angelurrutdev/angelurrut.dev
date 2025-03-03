@@ -1,0 +1,50 @@
+---
+import { Socials } from "@constants";
+import SocialPill from "./SocialPill.astro";
+import Mail from "./icons/Mail.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<section
+  class="flex flex-col justify-center items-center py-12 text-gray-800 dark:text-white"
+>
+  <div class="">
+    <h2
+      class="my-8 text-4xl font-bold text-center md:text-5xl md:my-0 text-pretty"
+    >
+      {i18n.HAVE_PROJECT_TITLE}
+    </h2>
+    <p class="mb-2 text-4xl font-semibold text-center">
+      {i18n.HAVE_PROJECT_SUBTITLE}
+    </p>
+  </div>
+  <div class="flex flex-row items-center my-2">
+    <SocialPill
+      href=""
+      title={Socials.email_title}
+      target="_blank"
+      class="flex justify-center items-center p-2 text-sm font-medium whitespace-nowrap rounded-md opacity-80 transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 hover:opacity-100"
+    >
+      <LinkedIn class="mx-1 size-5" />
+      <div class="flex items-center">
+        <span class="ml-1 lg:flex">LinkedIn </span>
+      </div>
+    </SocialPill>
+    <SocialPill
+      href=`mailto:${Socials.email_url}?Subject=Interesado%20en%20en%20trabajar%20juntos%20en%20un%20proyecto`
+      `
+      title={Socials.email_title}
+      target="_blank"
+      class="flex justify-center items-center p-2 text-sm font-medium whitespace-nowrap rounded-md opacity-80 transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 hover:opacity-100"
+    >
+      <Mail class="mx-1 size-5" />
+      <div class="flex items-center">
+        <span class="ml-1 lg:flex">{i18n.HAVE_PROJECT_CONTACT} </span>
+      </div>
+    </SocialPill>
+  </div>
+</section>
