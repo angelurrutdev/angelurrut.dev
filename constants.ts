@@ -1,5 +1,4 @@
 
-  export const lastupdate = '30/01/2025'
     export const Socials = {
     name: "Angel Urrutia",
     github_title: "Github",
