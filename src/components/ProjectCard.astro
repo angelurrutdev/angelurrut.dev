@@ -13,6 +13,7 @@ import Test from "./Test.svelte";
 import { Image } from "astro:assets";
 
 import { getI18N } from "../i18n";
+import MDXIcon from "./icons/MDXIcon.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
@@ -47,6 +48,11 @@ const TAGS = {
     class: "",
     icon: ReactIcon,
   },
+  MDX: {
+    name: "Markdown",
+    class: "",
+    icon: MDXIcon,
+  },
 };
 
 const PROJECTS = [
@@ -58,7 +64,6 @@ const PROJECTS = [
     github_url: "https://github.com/angelurrutdev/vecambio",
     project_image: "/projects/vecambio-project.webp",
     tags: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
-
     latest: true,
   },
   {
@@ -68,7 +73,7 @@ const PROJECTS = [
     url: "https://gitguide.vercel.app",
     github_url: "https://github.com/angelurrutdev/gitguide",
     project_image: "/projects/gitguide-project.webp",
-    tags: [TAGS.ASTRO],
+    tags: [TAGS.ASTRO, TAGS.MDX, TAGS.TAILWIND],
     updated: true,
   },
 ];
