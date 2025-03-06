@@ -1,60 +1,68 @@
-# Astro Starter Kit: Basics
+<div align="center">
+<a href="https://angelurrutdev.vercel.app">
+<img src="/readme_img.png">
+</a>
+<p></p>
+</div>
 
-## TODO- LIST
+<div align="center">
+    <a href="https://angelurrutdev.vercel.app" target="_blank">
+        Website
+    </a>
+    <span>&nbsp;❖&nbsp;</span>
+    <a href="https://github.com/angelurrutdev/angelurrut.dev?tab=readme-ov-file#-stack">
+        Stack
+    </a>
+    <span>&nbsp;❖&nbsp;</span>
+    <a href="https://github.com/angelurrutdev/angelurrut.dev?tab=readme-ov-file#-contributing">
+        Contribute
+    </a>
+</div>
 
-[X] Agregar Datos de otras plataformas (DolarToday, ETC...)
-[X] Mudar a vecambio.vercel.app
-[X] Poner un Header para moviles
-[X] Crear un logo y un banner para la web
-[X] Diseñar y Crear una pagina de erorr 404
-[X] Cambiar el footer a uno menos egocentrico xd
-[X] Diseñar y Crear una pagina de FAQ
-[X] Habilitar boton de copy paste y colocarlo en un buen sitio
-[] Añadir otras monedas en rapidapi especialmente (https://rapidapi.com/TockaAyman/api/currencyconverter9/playground/apiendpoint_25b8a416-334f-4d0c-b282-20c243520a11)
+</p>
 
-```sh
-npm create astro@latest -- --template basics
+<div align="center">
+
+![Astro Badge](https://img.shields.io/badge/-Astro-BC52EE?style=flat&logo=astro&logoColor=white)
+![Vercel Badge](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+![Svelte Badge](https://img.shields.io/badge/Svelte-FF3E00?logo=svelte&logoColor=fff&style=flat)
+![GitHub stars](https://img.shields.io/github/stars/angelurrutdev/angelurrut.dev)
+![GitHub issues](https://img.shields.io/github/issues/angelurrutdev/angelurrut.dev)
+![GitHub forks](https://img.shields.io/github/forks/angelurrutdev/angelurrut.dev)
+![GitHub PRs](https://img.shields.io/github/issues-pr/angelurrutdev/angelurrut.dev)
+</div>
+
+
+## 📦 Stack
+
+- [**Astro**](https://astro.build/) - The fastest way to build websites.
+- [**Svelte**](svelte.dev) - A compiler for creating component web applications.
+- [**Typescript**](https://www.typescriptlang.org/) - JavaScript with syntax for types.
+- [**TailwindCSS**](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
+
+## 🚀 Contributing
+
+1. [Fork](https://github.com/angelurrutdev/angelurrut.dev/fork) the repository.
+
+2. Install dependencies:
+
+```bash
+# Install pnpm globally if you don't have it:
+bun install -g bun
+
+# and install dependencies:
+bun install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+3. Run the development server:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+bun dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Open up [http://localhost:4321](http://localhost:4321) and make your changes ✨.
 
-## 🧞 Commands
+## 📄 License
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [**Apache-2.0 license**](https://github.com/angelurrutdev/angelurrut.dev?tab=Apache-2.0-1-ov-file#readme).
