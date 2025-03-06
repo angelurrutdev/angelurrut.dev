@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import { ClientRouter } from 'astro:transitions';
 import { getLangFromUrl } from '../i18n/utils';
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -38,6 +39,7 @@ const lang = getLangFromUrl(Astro.url);
     <meta property="twitter:url" content="https://angelurutdev.vercel.app/" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
+    <ClientRouter />
   </head>
 
   <body
