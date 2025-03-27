@@ -7,6 +7,7 @@ import ReactIcon from "../components/icons/ReactIcon.astro";
 import NextJSIcon from "../components/icons/NextJSIcon.astro";
 import TypeScriptIcon from "../components/icons/TypeScriptIcon.astro";
 import JavaScriptIcon from "../components/icons/JavaScriptIcon.astro";
+import CssIcon from "../components/icons/CssIcon.astro";
 import GitHub from "../components/icons/GitHub.astro";
 import Subtitle from "../components/Subtitle.astro";
 import Test from "./Test.svelte";
@@ -18,8 +19,13 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
 const TAGS = {
+  CSS: {
+    name: "CSS",
+    class: "",
+    icon: CssIcon,
+  },
   ASTRO: {
-    name: "Astro 5",
+    name: "Astro",
     class: "",
     icon: AstroIcon,
   },
@@ -57,6 +63,17 @@ const TAGS = {
 
 const PROJECTS = [
   {
+    icon: "/projects/icons/nothing-web.svg",
+    title: "ReDesing Nothing Phone",
+    description: `🌻 ${i18n.PROJECT_DESCRIPTION_THREE}`,
+    url: "https://clone-nothing-web.vercel.app",
+    github_url: "https://github.com/angelurrutdev/nothing-web",
+    project_image: "/projects/nothing-web-project.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.CSS, TAGS.JAVASCRIPT],
+    latest: true,
+  },
+
+  {
     icon: "/projects/icons/vecambio.svg",
     title: "VeCambio",
     description: `💸 ${i18n.PROJECT_DESCRIPTION_ONE}`,
@@ -64,7 +81,7 @@ const PROJECTS = [
     github_url: "https://github.com/angelurrutdev/vecambio",
     project_image: "/projects/vecambio-project.webp",
     tags: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
-    latest: true,
+    updated: true,
   },
   {
     icon: "/projects/icons/gitguide.webp",
@@ -156,9 +173,9 @@ interface Project {
             )}
             <div class="flex overflow-x-auto items-center py-1 font-mono md:space-x-2">
               {tags.map((tag) => (
-                <div class="flex items-center space-x-1">
+                <div class="flex items-center space-x-1 mx-1">
                   <span
-                    class={`inline-flex items-center px-2 py-1 space-x-2 font-mono text-xs font-medium rounded-md border cursor-default border-neutral-300 bg-neutral-300 text-gray-800 dark:text-white dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300"${tag.class}`}
+                    class={`inline-flex items-center px-2 py-1 space-x-2 font-mono text-xs font-medium rounded-md border cursor-default border-neutral-300 bg-neutral-300 text-gray-800 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300 "${tag.class}`}
                   >
                     <tag.icon class="mx-1 size-4" />
                     {tag.name}
