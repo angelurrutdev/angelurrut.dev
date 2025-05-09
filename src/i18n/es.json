@@ -2,16 +2,34 @@
     "SEO_TITLE": "Angel Urrutia | Portafolio",
     "SEO_DESCRIPTION": "Soy Angel, un fullstack desarollador web de Venezuela con un año de experiencia. Apasionado de las bases de datos, UI/UX design.",
     "HEADER_DOWNLOAD": "Descargar",
+
     "HERO_TITLE": "Hola, soy Angel",
-    "HERO_DESCRIPTION": " <strong> 1 Año de experiencia </strong> como Desarrollador Web de <strong>Venezuela, Aragua.</strong> He trabajado en diferentes <strong>proyectos personales</strong>. Me apasionan las <strong>bases de datos</strong>, el <strong>diseño UI/UX</strong> y <strong>Astro</strong>.",
+    "HERO_DESCRIPTION": " <strong> +2 Año de experiencia </strong> como Desarrollador Web de <strong>Venezuela, Aragua.</strong> He trabajado en diferentes <strong>proyectos personales</strong>. Me apasionan las <strong>bases de datos</strong>, el <strong>diseño UI/UX</strong> y <strong>Astro</strong>.",
+
     "EXPERIENCE_PRE_TITLE": "Experiencia",
+
     "PROJECTS_PRE_TITLE": "Proyectos",
+    "PROJECTS_SEE_MORE": "Leer más",
+    "PROJECT_FULL_COMEBACK": "Volver",
+
     "PROJECT_DESCRIPTION_ONE": "Calculadora de bolívares a dólares y euros en tiempo real",
+    "PROJECT_FULL_DESCRIPTION_ONE": "Una calculadora en tiempo real desarrollada para convertir montos en bolívares a dólares y euros de forma rápida y precisa.<br>Este proyecto surge como una solución práctica para quienes necesitan hacer conversiones constantes y confiables en su día a día, sin depender de plataformas pesadas o poco interactivas.<br><br>Construida con Next.js 15 y React, aprovecha el poder del Server-Side Rendering (SSR) para validar y actualizar los datos directamente desde la API cada 4 horas, evitando así consultas innecesarias en cada recarga de página, haciendo asi una excelente optimizacion del JavaScript cargado. Esto mejora considerablemente la experiencia del usuario cuando esta usando datos moviles.<br><br>El diseño fue desarrollado con Tailwind CSS para asegurar una interfaz clara, minimalista y fácil de usar, adaptada a distintos dispositivos. El uso de TypeScript garantiza mayor precision a la hora de cargar los datos y facilita el mantenimiento del proyecto.<br><br>Esta calculadora no es solo una herramienta funcional, sino también un ejemplo de cómo combinar buenas prácticas de desarrollo moderno con tecnologías eficientes para resolver problemas del día día de millones de venezolanos.",
+
+    
     "PROJECT_DESCRIPTION_TWO": "Una guía practica y sencilla de Git & GitHub",
-    "PROJECT_DESCRIPTION_THREE": "ReDiseño de la Landing Page de Nothing Phone",
+    "PROJECT_FULL_DESCRIPTION_TWO": "GitGuide es una guía interactiva creada con el objetivo de ayudarte a recordar y aprender los comandos más útiles de Git y GitHub de forma clara y accesible.<br>El proyecto fue creado de una necesidad: tener a mano una referencia que no solo fuese funcional, sino también agradable al usuario.<br><br>Utilicé Astro como framework principal del proyecto. Utilice Markdown para renderizar cada sección de la guía de manera sencilla, haciendo que el contenido sea fácil de actualizar y escalar en el tiempo.<br><br>El diseño fue trabajado con Tailwind CSS, para aplicar estilos de forma rápida, Cada comando está organizado por categorías y necesidades, acompañado de descripciones breves, para que tanto principiantes como usuarios más avanzados puedan encontrar lo que necesitan sin perder tiempo.",
+
+
+    "PROJECT_DESCRIPTION_THREE": "Rediseño de la Landing Page de Nothing Phone",
+    "PROJECT_FULL_DESCRIPTION_THREE": "Un rediseño del sitio web de Nothing Phone, una marca reconocida por su enfoque minimalista y su estética futurista.<br>Mi objetivo principal fue mantener la esencia visual de la marca, pero dándole un enfoque más moderno y eficiente, tanto en términos de rendimiento como de experiencia de usuario.<br><br>Astro me permitió dividir de forma precisa los componentes y entregar solo el JavaScript necesario al cliente, lo cual ayuda a una experiencia más fluida, especialmente en dispositivos móviles.Tailwind CSS me permitió trabajar de manera ágil con utilidades para mantener un diseño limpio y coherente con la identidad visual de Nothing. Además, combiné animaciones en CSS para darle un toque único.<br><br>Este rediseño no solo es una propuesta visual, sino también una demostración técnica de cómo se pueden aplicar herramientas básicas para crear experiencias web más rápidas, accesibles y atractivas, sin comprometer el estilo y la identidad de marca.",
+
+    "SKILL_PRE_TITLE": "Habilidades",
+
     "HAVE_PROJECT_TITLE": "¿ Tienes algún proyecto ? ",
     "HAVE_PROJECT_SUBTITLE": "Trabajemos juntos",
     "HAVE_PROJECT_CONTACT": "Contactame",
-    "LAST_UPDATE": "Ultima actualización: 29/03/2025",
+
+    "CERTIFICATS": "Certificaciones",
+    "LAST_UPDATE": "Ultima actualización: 23/04/2025",
     "MADE_BY": "Hecho por Angel con"
 }

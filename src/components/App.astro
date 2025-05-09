@@ -5,6 +5,8 @@ import HeroSection from "./HeroSection.astro";
 import HaveAProject from "./HaveAProject.astro";
 
 import { getI18N } from "@/i18n";
+import Skill from "./Skill.astro";
+import OtherProjects from "./OtherProjects.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
@@ -14,5 +16,8 @@ const i18n = getI18N({ currentLocale });
     <HeroSection />
     <Projects />
     <HaveAProject />
+    <OtherProjects/>
+    <Skill/>
+
   </main>
 </Layout>
