@@ -1,0 +1,28 @@
+---
+import Subtitle from "./Subtitle.astro";
+import { TAGS } from '@/const/tags'; 
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<section class="py-8 max-w-2xl md:max-w-5xl">
+  <Subtitle>{i18n.SKILL_PRE_TITLE}</Subtitle>
+  <div
+    class="rounded-md border border-neutral-300 p-3 dark:border-neutral-800
+    flex flex-wrap md:gap-4 gap-1"
+  >
+    {
+      Object.values(TAGS).map(({ name, icon: Icon }) => (
+        
+          <div class="flex-col items-center justify-center rounded-md p-2 inline-flex cursor-default border border-neutral-300 bg-neutral-200/50 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300 hover:bg-neutral-200/90 dark:hover:bg-neutral-800/80 transition ">
+            {Icon && <Icon class="m-1 size-20" />}
+            <span class="text-sm font-medium">{name}</span>
+          </div>
+        
+      ))
+    }
+  </div>
+
+</section>

@@ -1,0 +1,133 @@
+---
+//ICONS
+import GitHub from "@/assets/social/github.svg";
+import Link from "@/assets/icons/link.svg";
+import ArrowRight from "@/assets/icons/arrow-right.svg";
+
+//COMPONENTS
+import ShinyBadge from "../components/ShinyBadge.astro";
+import ModeWatcher from "./ModeWatcher.svelte";
+import { Image } from "astro:assets";
+
+// I18N
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+function getBadgeText(project: Project) {
+  if (project.latest) return "latest";
+  if (project.updated) return "updated";
+  return "";
+}
+
+interface Project {
+  latest?: boolean;
+  updated?: boolean;
+}
+
+const currentURL = new URL(Astro.request.url);
+const mostrarEN = currentURL.pathname.startsWith("/en/");
+
+import Layout from "@/layouts/Layout.astro";
+const { project } = Astro.props;
+---
+<Layout title=`${i18n.SEO_TITLE} | ${project.title}` description=`${i18n.SEO_DESCRIPTION}`>
+  <section
+    class="mx-auto mt-12 max-w-2xl space-y-3 duration-500 delay-100 md:max-w-5xl margin-vh"
+  >
+    <div class="group flex items-center justify-start space-x-2 tracking-tight opacity-70 transition-opacity duration-100 hover:opacity-100 md:justify-start">
+      <a class="inline-flex items-center px-4 hover:cursor-pointer"   href={`${mostrarEN ? '/en/' : '/'}`}>
+        <ArrowRight class="rotate-180" />
+        {i18n.PROJECT_FULL_COMEBACK}
+      </a>
+    </div>
+    <ModeWatcher client:load transition:name="box">
+      <div class="flex flex-col w-full md:flex-row md:space-x-8">
+        <div class="flex-grow">
+          <div class="flex items-center justify-between w-full my-1">
+            <div class="flex items-center space-x-3">
+              <img
+                src={project.icon}
+                alt={project.title}
+                class="rounded-md size-6"
+              />
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center gap-1 font-medium decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:underline"
+              >
+                <span>{project.title}</span>
+                <Link class="size-4" />
+              </a>
+            </div>
+            <div class="flex items-center gap-2">
+              <ShinyBadge class="size-5">
+                {
+                  getBadgeText({
+                    latest: project.latest,
+                    updated: project.updated,
+                  })
+                }</ShinyBadge
+              >
+              {
+                project.github_url && (
+                  <a
+                    href={project.github_url}
+                    title={`View ${project.title} repository on GitHub`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="opacity-75 transition-opacity duration-100 hover:opacity-100"
+                  >
+                    <GitHub class="inline-flex size-6 items-center justify-center space-x-3 rounded-md opacity-80 transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 hover:opacity-100 whitespace-nowrap text-sm font-medium" />
+                  </a>
+                )
+              }
+            </div>
+          </div>
+          {
+            project.project_image && (
+              <a href={project.url} target="_blank" class="block">
+                <Image
+                  transition:name={project.project_image}
+                  src={project.project_image}
+                  alt={`Imagen de ${project.title}`}
+                  width={480}
+                  height={270}
+                  loading="lazy"
+                  class="object-cover rounded-md transition duration-300 hover:scale-95 w-full"
+                />
+              </a>
+            )
+          }
+          <div
+            class="mt-2 flex overflow-x-auto items-center py-1 font-mono md:space-x-2"
+          >
+            {
+              project.tags.map((tag: any) => (
+                <div class="mx-1 flex items-center space-x-1">
+                  <span
+                    class={`inline-flex items-center space-x-2 rounded-md border border-neutral-300 bg-neutral-300 px-2 py-1 font-mono text-xs font-medium text-gray-800 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300 ${tag.class}`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div class="max-w-lg">
+          <p class="text-md md:text-sm font-semibold dark:text-neutral-300 mt-2 md:mt-0" set:html={project.full_description}>
+          </p>
+        </div>
+      </div>
+    </ModeWatcher>
+  </section>
+</Layout>
+
+<style>
+  .margin-vh {
+    margin-bottom: 25vh;
+  }
+</style>

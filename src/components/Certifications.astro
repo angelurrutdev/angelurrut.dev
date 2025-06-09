@@ -1,0 +1,67 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import {CERTIFICATIONS} from '@/const/certifications'
+import ButtonReed from "./ButtonReed.astro";
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const EDTEAM = CERTIFICATIONS.slice(0,8)
+const PLATZI = CERTIFICATIONS.slice(8, 15)
+const OTHERS = CERTIFICATIONS.slice(15)
+
+---
+
+<Layout
+title=`${i18n.SEO_TITLE}` description=`${i18n.SEO_DESCRIPTION}`
+>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl md:max-w-5xl">
+    {
+      PLATZI.map(({ url,  title, certification }) => (
+        <div>
+            <div class="border border-neutral-300 bg-neutral-200/50 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300 hover:bg-neutral-200/90 dark:hover:bg-neutral-800/80 transition rounded-lg">
+                <figure>
+            <img class="h-auto max-w-full rounded-lg shadow-md my-2" src=`/certifications/${certification}.webp` alt={title} decoding="async" title="`Certificado de ${title}`"/>
+                </figure>
+                { url && (
+      <ButtonReed target="_blank" href={url} label="Ver Certificado" />
+    )}
+            </div>
+         
+        </div>
+      ))
+    }
+       {
+        EDTEAM.map(({ url,  title, certification }) => (
+          <div>
+              <div class="border border-neutral-300 bg-neutral-200/50 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300 hover:bg-neutral-200/90 dark:hover:bg-neutral-800/80 transition rounded-lg">
+                  <figure>
+              <img class="h-auto max-w-full rounded-lg shadow-md my-2" src=`/certifications/${certification}.webp` alt={title} decoding="async" title="`Certificado de ${title}`"/>
+                  </figure>
+                  { url && (
+        <ButtonReed target="_blank" href={url} label="Ver Certificado" />
+      )}
+              </div>
+           
+          </div>
+        ))
+      }
+
+{
+  OTHERS.map(({ url,  title, certification }) => (
+    <div>
+        <div class="border border-neutral-300 bg-neutral-200/50 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300 hover:bg-neutral-200/90 dark:hover:bg-neutral-800/80 transition rounded-lg">
+            <figure>
+        <img class="h-auto max-w-full rounded-lg shadow-md my-2" src=`/certifications/${certification}.webp` alt={title} decoding="async" title="`Certificado de ${title}`"/>
+            </figure>
+            { url && (
+  <ButtonReed target="_blank" href={url} label="Ver Certificado" />
+)}
+        </div>
+     
+    </div>
+  ))
+}
+  </div>
+</Layout>

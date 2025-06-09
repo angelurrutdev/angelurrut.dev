@@ -1,16 +1,21 @@
 ---
-import { Socials } from "@constants";
-import SocialPill from "./SocialPill.astro";
-import LinkedIn from "./icons/LinkedIn.astro";
-
-import { getI18N } from "@/i18n";
-import AstroIcon from "./icons/AstroIcon.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+
+import SocialPill from "./SocialPill.astro";
+import Linkedin from "@/assets/social/linkedin.svg";
+import { SOCIAL } from "../const/social";
+import { getI18N } from "@/i18n";
+import AstroIcon from '@/assets/icons/astro.svg';
+
+
+const currentURL = new URL(Astro.request.url);
+const mostrarEN = currentURL.pathname.startsWith("/en");
 ---
 
 <footer
-  class="group w-full text-xs text-neutral-600 animate-in fade-in-25 dark:text-neutral-400 backdrop-blur-md bottom-0 mt-4 max-w-2xl md:max-w-5xl font-mono"
+  class="group w-full text-xs text-neutral-600 animate-in fade-in-25 dark:text-neutral-400 backdrop-blur-md max-w-2xl md:max-w-5xl font-mono bottom-0
+  "
 >
   <div class="mx-4 flex items-center justify-between">
     <div class="flex items-center space-x-2">
@@ -29,7 +34,7 @@ const i18n = getI18N({ currentLocale });
           d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
         ></path></svg
       ><a
-        href="https://astro.build/blog/astro-5-beta/"
+        href="https://astro.build"
         rel="noreferrer"
         target="_blank"
         class="flex items-center space-x-1 text-sm"
@@ -38,13 +43,14 @@ const i18n = getI18N({ currentLocale });
       </a>
     </div>
     <div class="flex items-center space-x-2">
+      <a rel="noreferrer noopener" class="hover:underline" href={`${mostrarEN ? '/en/certifications' : '/certifications'}`}>{i18n.CERTIFICATS}</a>
       <p class="">{i18n.LAST_UPDATE}</p>
       <SocialPill
-        href={Socials.linkedin_url}
-        title={Socials.linkedin_title}
+        href={SOCIAL.find((social) => social.id === "linkedin")?.url}
+        title={SOCIAL.find((social) => social.id === "linkedin")?.name}
         target="_blank"
       >
-        <LinkedIn class="size-5 mx-1" />
+        <Linkedin class="size-5 mx-1" />
       </SocialPill>
     </div>
   </div>

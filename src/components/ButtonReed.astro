@@ -1,0 +1,17 @@
+---
+import ArrowRight from '@/assets/icons/arrow-right.svg'
+const { href, label, target } = Astro.props
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<a
+href={href}
+rel="noreferrer noopener"
+target={target}
+class="group items-center space-x-[4px] text-sm tracking-tight opacity-70 transition-opacity duration-100 hover:opacity-100 md:flex px-2 md:p-0"
+>
+<span>{label}</span>
+  <ArrowRight class="md:flex hidden"/>
+</a>

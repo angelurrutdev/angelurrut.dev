@@ -1,0 +1,20 @@
+---
+// Importar los datos del proyecto
+import ProjectFull from "@/components/ProjectFull.astro";
+import { getProjects } from "@/const/projects";
+
+// Obtener el locale de la URL y el ID del proyecto
+const { currentLocale, params } = Astro;
+const { id } = params;
+
+// Determinar el locale (usando el `locale` de la URL o `es` como fallback)
+const locale = currentLocale ?? 'es'; // Si no se pasa un locale, usamos 'es'
+
+// Obtener los proyectos basados en el locale
+const PROJECTS = getProjects(locale);
+
+// Buscar el proyecto con el ID
+const project = PROJECTS.find(proj => proj.id === id);
+---
+
+<ProjectFull project={project} />
