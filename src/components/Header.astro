@@ -8,9 +8,6 @@ import { getI18N } from "@/i18n";
 import LanguageSelector from "./LanguageSelector.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-
-const CV_ENGLISH = "/CV_Angel_Urrutia(English).pdf";
-const CV_SPANISH = "/CV_Angel_Urrutia(Spanish).pdf";
 // Obtener el CV mediante la URL
 const currentURL = new URL(Astro.request.url);
 const mostrarEN = currentURL.pathname.startsWith("/en/");
@@ -27,18 +24,6 @@ const mostrarEN = currentURL.pathname.startsWith("/en/");
   </a>
 
   <div class="flex items-center space-x-1">
-    <SocialPill
-      class="flex justify-center items-center p-1 text-sm font-medium whitespace-nowrap rounded-md opacity-80 transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 hover:opacity-100"
-      href={mostrarEN ? CV_ENGLISH : CV_SPANISH}
-      target="_blank"
-    >
-      <Cv class="size-6" />
-      <div class="flex items-center">
-        <span class="hidden ml-1 lg:flex"> {i18n.HEADER_DOWNLOAD} &nbsp; </span>
-        <span>CV</span>
-      </div>
-    </SocialPill>
-
     {
       SOCIAL.map(({ url, image, name, label, id }) => {
         const isEmail = id === "email";

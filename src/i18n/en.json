@@ -1,10 +1,10 @@
 {
     "SEO_TITLE": "Angel Urrutia | Porfolio",
-    "SEO_DESCRIPTION": "I'm Angel, a fullstack web developer from Venezuela with +1 years of experience. I'm passionate about databases, UI/UX design.",
+    "SEO_DESCRIPTION": "I'm Angel, a fullstack web developer from México with +1 years of experience. I'm passionate about databases, UI/UX design.",
     "HEADER_DOWNLOAD": "Download",
 
     "HERO_TITLE": "Hey, I'm Angel",
-    "HERO_DESCRIPTION": "<strong>+2 Year of experience</strong> as a Web Developer <strong>from Venezuela, Aragua.</strong> I have worked on different <strong>personal projects</strong>. I am passionate about <strong>databases</strong>, <strong>UI/UX design</strong> and <strong>Astro</strong>.",
+    "HERO_DESCRIPTION": "<strong>+2 Year of experience</strong> as a Web Developer <strong>from México, Naucalpan de Juárez.</strong> I have worked on different <strong>personal projects</strong>. I am passionate about <strong>databases</strong>, <strong>UI/UX design</strong> and <strong>Astro</strong>.",
 
     "EXPERIENCE_PRE_TITLE": "Experience",
 
@@ -13,7 +13,7 @@
     "PROJECT_FULL_COMEBACK": "Go Back",
 
     "PROJECT_DESCRIPTION_ONE": "Currency converter in real-time bolivar to dollar and euro",
-    "PROJECT_FULL_DESCRIPTION_ONE": "A real-time calculator developed to convert amounts from bolívares to dollars and euros quickly and accurately.<br>This project was born as a practical solution for people who need to make constant and reliable conversions in their daily lives, without relying on heavy or unresponsive platforms.<br><br>Built with Next.js 15 and React, it leverages the power of Server-Side Rendering (SSR) to validate and update data directly from the API every 4 hours. This avoids unnecessary API requests on every page reload and leads to excellent JavaScript optimization. As a result, the user experience is significantly improved, especially when using mobile data.<br><br>The design was crafted with Tailwind CSS to ensure a clear, minimalist, and user-friendly interface across different devices. TypeScript adds precision in data handling and makes the project easier to maintain.<br><br>This calculator is not only a functional tool but also a great example of how modern development practices and efficient technologies can be combined to solve everyday problems faced by millions of Venezuelans.",
+    "PROJECT_FULL_DESCRIPTION_ONE": "A real-time calculator developed to convert amounts from bolívares to dollars and euros quickly and accurately.<br>This project was born as a practical solution for people who need to make constant and reliable conversions in their daily lives, without relying on heavy or unresponsive platforms.<br><br>Built with Next.js 15 and React, it leverages the power of Server-Side Rendering (SSR) to validate and update data directly from the API every 4 hours. This avoids unnecessary API requests on every page reload and leads to excellent JavaScript optimization. As a result, the user experience is significantly improved, especially when using mobile data.<br><br>The design was crafted with Tailwind CSS to ensure a clear, minimalist, and user-friendly interface across different devices. TypeScript adds precision in data handling and makes the project easier to maintain.<br><br>This calculator is not only a functional tool but also a great example of how modern development practices and efficient technologies can be combined to solve everyday problems faced by millions of Méxicons.",
 
 
     "PROJECT_DESCRIPTION_TWO": "A practical and easy guide to Git & GitHub",
@@ -31,6 +31,6 @@
     "HAVE_PROJECT_CONTACT": "Contact me",
 
     "CERTIFICATS": "Certifications",
-    "LAST_UPDATE": "Last Update: 23/04/2025",
+    "LAST_UPDATE": "Last Update: 07/23/2025",
     "MADE_BY": "Made by Angel Using"
 }

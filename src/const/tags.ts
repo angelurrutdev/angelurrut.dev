@@ -50,13 +50,6 @@ export const TAGS = {
     icon: JavaScript,
   },
 
-  VITE: {
-    name: "Vite",
-    class: "",
-    icon: Vite,
-  },
-
-
   REACT: {
     name: "React",
     class: "",
@@ -81,10 +74,6 @@ export const TAGS = {
     class: "",
     icon: Sql,
   },
-
-
-
-
 
   MDX: {
     name: "Markdown",
